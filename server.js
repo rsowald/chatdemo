@@ -8,7 +8,6 @@ const apiurl = `https://${process.env.SPACE_URL}`;
 const axios = require("axios");
 const express = require("express");
 
-const routes = require("./routes");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -21,8 +20,6 @@ app.use(cors());
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("frontend/build"));
 }
-
-app.use(routes);
 
 // Getting chat token from SignalWire
 app.post("/get_chat_token", async (req, res) => {
