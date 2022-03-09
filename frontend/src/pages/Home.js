@@ -1,11 +1,20 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Sidenav from "../components/Sidenav";
+import Channel from "../components/Channel";
 
 function Home() {
     return (
-        <Container>
-            <Sidenav />
+        <Container className='container-sm'>
+            <Row className=' justify-content-center'>
+                <Col sm={3}>
+                    <Sidenav />
+                </Col>
+                <Col sm={7}>
+                    <Channel />
+                </Col>
+            </Row>
+
         </Container>
     );
 };
