@@ -3,8 +3,8 @@ import { Container, Form, Button } from "react-bootstrap";
 
 function Login() {
     return (
-        <Container>
-            <h2>Chat example</h2>
+        <Container className="mt-3">
+            <h2>Chat Example</h2>
             <Form>
                 <Form.Group className="mb-3">
                     <Form.Label>Username</Form.Label>
@@ -27,10 +27,10 @@ function Login() {
                         Separate multiple channels with a comma.
                     </div>
                 </Form.Group>
-                <Button type="submit" className="btn btn-primary">Join Chat</Button>
+                <Button type="submit" variant="primary">Join Chat</Button>
             </Form>
         </Container>
-    )
-}
+    );
+};
 
 export default Login;
