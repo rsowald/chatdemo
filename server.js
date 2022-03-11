@@ -30,8 +30,8 @@ app.post("/get_chat_token", async (req, res) => {
         channelsPerms[c] = { read: true, write: true }
     }
 
-    const reply = await axios.post(
-        apiurl + "/api/chat/tokens",
+    const tokenApi = apiurl + "/api/chat/tokens";
+    const reply = await axios.post(tokenApi,
         {
             ttl: 50,
             channels: channelsPerms,
