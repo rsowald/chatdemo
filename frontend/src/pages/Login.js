@@ -25,6 +25,9 @@ function Login({ onLoggedIn }) {
         const chatClient = new Chat.Client({
             token: reply.data.token
         });
+        // Temporary cache fix
+        chatClient.cleanupEventHandlerTransformCache = () => { }
+        window.chatClient = chatClient;
 
         onLoggedIn(member_id, channels, chatClient);
 
