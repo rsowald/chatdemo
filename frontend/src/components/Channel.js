@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Container, Form, Button } from "react-bootstrap";
 
-function Channel({ selectedChannel, chatClient }) {
+function Channel({ selectedChannel, chatClient, channels }) {
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([]);
     const scrollRef = useRef();
@@ -36,7 +36,7 @@ function Channel({ selectedChannel, chatClient }) {
                 setMessages(oldMessages => [...oldMessages, message]);
             });
             try {
-                await chatClient.unsubscribe(selectedChannel);
+                await chatClient.unsubscribe(channels);
             } catch (_) { }
             await chatClient.subscribe(selectedChannel);
 
