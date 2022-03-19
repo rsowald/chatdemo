@@ -25,7 +25,7 @@ function Home({ channels, username, chatClient }) {
                     <Sidenav setSelectedChannel={setSelectedChannel} channels={channels} />
                 </Col>
                 <Col sm={7} className="mt-3" >
-                    <Channel selectedChannel={selectedChannel} chatClient={chatClient} />
+                    <Channel selectedChannel={selectedChannel} chatClient={chatClient} channels={channels} />
                 </Col>
             </Row>
         </Container>
